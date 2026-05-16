@@ -39,17 +39,35 @@ use_collision = true
 size = Vector3(0.2, 6, 10)
 
 [node name="Player_tcsn" type="CharacterBody3D" parent="." unique_id=404739443]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28908622, 1.034015, 0.0005773902)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28908622, 1.4301268, 0.0005773902)
 script = ExtResource("1_y4dyo")
 
 [node name="PlayerMesh" parent="Player_tcsn" unique_id=2103908971 instance=ExtResource("2_y4dyo")]
 transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0.28908622, -1.034015, -0.0005773902)
 
+[node name="Object_89" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(2103908971, 965745573) index="0" unique_id=190873954]
+visible = false
+
+[node name="Object_91" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(2103908971, 965745573) index="1" unique_id=96466011]
+visible = false
+
+[node name="Object_93" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(2103908971, 965745573) index="2" unique_id=2046130186]
+visible = false
+
+[node name="Object_95" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(2103908971, 965745573) index="3" unique_id=1705722983]
+visible = false
+
+[node name="Object_97" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(2103908971, 965745573) index="4" unique_id=1883619803]
+visible = false
+
+[node name="Object_99" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(2103908971, 965745573) index="5" unique_id=1835872340]
+visible = false
+
 [node name="Head" type="Node3D" parent="Player_tcsn" unique_id=2124618724]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2521981)
 
 [node name="Camera3D" type="Camera3D" parent="Player_tcsn/Head" unique_id=1365871001]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.275, 1.9901032, 0.5)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.2762701, 1.876585, 0.23886615)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player_tcsn" unique_id=513557889]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.3, 0.6, 0)
@@ -59,6 +77,7 @@ shape = SubResource("CapsuleShape3D_1hxcq")
 
 [node name="Roof" type="CSGBox3D" parent="." unique_id=1672354281]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+visible = false
 use_collision = true
 size = Vector3(10, 0.2, 10)
 
@@ -70,25 +89,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 size = Vector3(2.5, 4, 0.1)
 
 [node name="corridor00_01" type="Node3D" parent="." unique_id=139991420]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.046787)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="corridor00_01" unique_id=1653726190]
-transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, -7.1525574e-07, 6, 1)
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 6, 0)
 use_collision = true
 size = Vector3(6, 0.2, 8)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="corridor00_01" unique_id=1603476538]
-transform = Transform3D(1.3113416e-07, 1, 0, -1, 1.3113416e-07, 0, 0, 0, 1, -3.0000002, 2.9999995, 1)
+transform = Transform3D(1.3113416e-07, 1, 0, -1, 1.3113416e-07, 0, 0, 0, 1, -3.0000002, 2.9999995, 0)
 use_collision = true
 size = Vector3(6, 0.2, 8)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="corridor00_01" unique_id=2026617339]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 2.9999998, 3.0000002, 1)
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 2.9999998, 3.0000002, 0)
 use_collision = true
 size = Vector3(6, 0.2, 8)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="corridor00_01" unique_id=1311379100]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 use_collision = true
 size = Vector3(6, 0.2, 8)
 
@@ -96,3 +114,5 @@ size = Vector3(6, 0.2, 8)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 light_energy = 1.005
 omni_range = 15.0
+
+[editable path="Player_tcsn/PlayerMesh"]
