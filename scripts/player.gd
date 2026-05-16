@@ -6,6 +6,11 @@ extends CharacterBody3D
 var can_hide: bool = false
 var is_hidden: bool = false
 
+func _ready():
+	if GameManager.next_spawn != Vector3.ZERO:
+		global_position = GameManager.next_spawn
+		GameManager.next_spawn = Vector3.ZERO
+
 func _physics_process(_delta):
 	if is_hidden:
 		return
@@ -30,11 +35,11 @@ func _unhandled_input(event):
 
 func _enter_hide():
 	is_hidden = true
-	$MeshInstance3D.transparency = 0.7
+	$PlayerMesh.transparency = 0.7
 
 func _exit_hide():
 	is_hidden = false
-	$MeshInstance3D.transparency = 0.0
+	$PlayerMesh.transparency = 0.0
 
 func die():
 	GameManager.lose()

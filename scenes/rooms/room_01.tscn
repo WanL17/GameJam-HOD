@@ -3,8 +3,7 @@
 [node name="room_01" type="Node3D" unique_id=867187246]
 
 [node name="Roof" type="CSGBox3D" parent="." unique_id=1731718914]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 7.1525574e-07, 6, 6.0467854)
-visible = false
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 7.1525574e-07, 6, 0.046785355)
 use_collision = true
 size = Vector3(24, 0.2, 22)
 
@@ -80,7 +79,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
 
 [node name="OpenMesh" type="CSGBox3D" parent="EntryCorridor/WallNorth/door" unique_id=1186074986]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-visible = false
 size = Vector3(2.5, 4, 0.1)
 
 [node name="ExitCorridor" type="Node3D" parent="." unique_id=413680657]
@@ -121,5 +119,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
 
 [node name="OpenMesh" type="CSGBox3D" parent="ExitCorridor/WallNorth/door" unique_id=1970356880]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-visible = false
 size = Vector3(2.5, 4, 0.1)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=419885257]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+omni_range = 24.243
