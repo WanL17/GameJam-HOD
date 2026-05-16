@@ -1,3 +1,35 @@
 [gd_scene format=3 uid="uid://dcbbgiwtl533a"]
 
+[ext_resource type="PackedScene" uid="uid://bdbx4cvc48n1j" path="res://scenes/player.tscn" id="1_qb7o7"]
+
 [node name="Room00" type="Node3D" unique_id=608669161]
+
+[node name="Floor" type="CSGBox3D" parent="." unique_id=620374216]
+size = Vector3(10, 0.2, 10)
+
+[node name="WallNorth" type="CSGBox3D" parent="." unique_id=32741244]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -5)
+size = Vector3(10, 3, 0.2)
+
+[node name="WallSouth" type="CSGBox3D" parent="." unique_id=2146964925]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 5)
+size = Vector3(10, 3, 0.2)
+
+[node name="WallEast" type="CSGBox3D" parent="." unique_id=1824453271]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.5, 0)
+size = Vector3(0.2, 3, 10)
+
+[node name="WallWest" type="CSGBox3D" parent="." unique_id=296601147]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.5, 0)
+size = Vector3(0.2, 3, 10)
+
+[node name="Player_tcsn" parent="." unique_id=421240090 instance=ExtResource("1_qb7o7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=652868375]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 2.7631094, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1672354281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+size = Vector3(10, 0.2, 10)
