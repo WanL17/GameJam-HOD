@@ -24,7 +24,7 @@ func _unhandled_input(event):
 		# On limite la vision pour ne pas pouvoir faire un backflip avec les yeux
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
 		
-		head.position.y = clamp(head.position.y, 1.5, 2.2)
+		head.position.y = clamp(head.position.y, 2.2, 2.2)
 
 func _physics_process(delta):
 	# Ajout de la gravité (géré de base par Godot)

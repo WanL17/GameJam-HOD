@@ -33,21 +33,21 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1924354910]
 environment = SubResource("Environment_tlwt5")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=2053822691]
+[node name="Player" type="CharacterBody3D" parent="." unique_id=2053822691]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28908622, 0.83865714, 0.0005773902)
 script = ExtResource("1_f3sb7")
 
-[node name="PlayerMesh" parent="CharacterBody3D" unique_id=1909163651 instance=ExtResource("2_fj7yv")]
+[node name="PlayerMesh" parent="Player" unique_id=1909163651 instance=ExtResource("2_fj7yv")]
 transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, -0.7929709, 0)
 
-[node name="Head" type="Node3D" parent="CharacterBody3D" unique_id=366331094]
+[node name="Head" type="Node3D" parent="Player" unique_id=366331094]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2521981)
 
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head" unique_id=1702458695]
+[node name="Camera3D" type="Camera3D" parent="Player/Head" unique_id=1702458695]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2.271988, 0.54480755)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=115076369]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=115076369]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8538201, 0)
 shape = SubResource("CapsuleShape3D_fj7yv")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody3D" unique_id=1881810836]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player" unique_id=1881810836]
