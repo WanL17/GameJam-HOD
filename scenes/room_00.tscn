@@ -13,20 +13,20 @@ height = 3.4265137
 size = Vector3(10, 0.2, 10)
 
 [node name="WallNorth" type="CSGBox3D" parent="." unique_id=32741244]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -5)
-size = Vector3(10, 3, 0.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -5)
+size = Vector3(10, 6, 0.2)
 
 [node name="WallSouth" type="CSGBox3D" parent="." unique_id=2146964925]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 5)
-size = Vector3(10, 3, 0.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 5)
+size = Vector3(10, 6, 0.2)
 
 [node name="WallEast" type="CSGBox3D" parent="." unique_id=1824453271]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.5, 0)
-size = Vector3(0.2, 3, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3, 0)
+size = Vector3(0.2, 6, 10)
 
 [node name="WallWest" type="CSGBox3D" parent="." unique_id=296601147]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.5, 0)
-size = Vector3(0.2, 3, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, 0)
+size = Vector3(0.2, 6, 10)
 
 [node name="Player_tcsn" type="CharacterBody3D" parent="." unique_id=404739443]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28908622, 1.034015, 0.0005773902)
@@ -48,10 +48,10 @@ shape = SubResource("CapsuleShape3D_1hxcq")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player_tcsn" unique_id=970927299]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=652868375]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 2.7631094, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.5, 0)
 shadow_enabled = true
 
 [node name="Roof" type="CSGBox3D" parent="." unique_id=1672354281]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
 visible = false
 size = Vector3(10, 0.2, 10)
