@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://schveqje4ji1"]
+
+[ext_resource type="Script" uid="uid://dnxhl51egqv1v" path="res://character_body_3d.gd" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://da3nemwqq51rx" path="res://assets/office_worker.glb" id="2_fj7yv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f3sb7"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_fj7yv"]
+sky_material = SubResource("ProceduralSkyMaterial_f3sb7")
+
+[sub_resource type="Environment" id="Environment_tlwt5"]
+background_mode = 2
+sky = SubResource("Sky_fj7yv")
+tonemap_mode = 2
+
+[node name="World" type="Node3D" unique_id=399703855]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1309829609]
+transform = Transform3D(1, -1.4901161e-08, -1.4901161e-08, -1.4901161e-08, 1, -2.9802322e-08, -1.4901161e-08, 0, 1, -1.6938334, -0.0025432222, 2.9503074)
+use_collision = true
+size = Vector3(33.368668, 0.09716797, 38.898453)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1016089484]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1924354910]
+environment = SubResource("Environment_tlwt5")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=2053822691]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28908622, 0.85760266, 0.0005773902)
+script = ExtResource("1_f3sb7")
+
+[node name="PlayerMesh" parent="CharacterBody3D" unique_id=1909163651 instance=ExtResource("2_fj7yv")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.7929709, 0)
+
+[node name="Head" type="Node3D" parent="CharacterBody3D" unique_id=366331094]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2521981)
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head" unique_id=1702458695]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2.5965757, 0.48260677)

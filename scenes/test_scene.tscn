@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dsl071k8mpmd8"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_a5oyu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g7g4h"]
+
+[node name="TestScene" type="Node3D" unique_id=1608903323]
+
+[node name="room00" type="Node3D" parent="." unique_id=1286095764]
+
+[node name="floor" type="StaticBody3D" parent="." unique_id=2043688701]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=2045200185]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("PlaneMesh_a5oyu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=51987968]
+transform = Transform3D(20, 0, 0, 0, 0.1, 0, 0, 0, 20, 0, 0, 0)
+shape = SubResource("BoxShape3D_g7g4h")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1760384252]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 0, 0, 0)
