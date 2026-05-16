@@ -5,6 +5,8 @@ extends Node
 var has_coffee: bool = false
 var current_room: int = 0
 var total_rooms: int = 3  # Adjust to match how many rooms you build
+var next_spawn: Vector3 = Vector3(0, 1, 0)
+
 
 func reset():
 	has_coffee = false
