@@ -19,10 +19,12 @@ func _unhandled_input(event):
 		rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
 		
 		# Pivot haut/bas de la tête uniquement
-		head.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
+		head.rotate_x(event.relative.y * MOUSE_SENSITIVITY)
 		
 		# On limite la vision pour ne pas pouvoir faire un backflip avec les yeux
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-89), deg_to_rad(89))
+		
+		head.position.y = clamp(head.position.y, 1.5, 2.2)
 
 func _physics_process(delta):
 	# Ajout de la gravité (géré de base par Godot)
@@ -34,7 +36,7 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 
 	# Récupération des directions avec ZQSD (ou les flèches par défaut de Godot)
-	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var input_dir = Input.get_vector("ui_right", "ui_left", "ui_down", "ui_up")
 	
 	# IMPORTANT : On se déplace par rapport à la direction où regarde le joueur
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()

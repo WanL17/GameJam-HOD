@@ -15,6 +15,10 @@ background_mode = 2
 sky = SubResource("Sky_fj7yv")
 tonemap_mode = 2
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fj7yv"]
+radius = 1.2890625
+height = 3.4265137
+
 [node name="World" type="Node3D" unique_id=399703855]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1309829609]
@@ -30,14 +34,20 @@ shadow_enabled = true
 environment = SubResource("Environment_tlwt5")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=2053822691]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28908622, 0.85760266, 0.0005773902)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28908622, 0.83865714, 0.0005773902)
 script = ExtResource("1_f3sb7")
 
 [node name="PlayerMesh" parent="CharacterBody3D" unique_id=1909163651 instance=ExtResource("2_fj7yv")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.7929709, 0)
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, -0.7929709, 0)
 
 [node name="Head" type="Node3D" parent="CharacterBody3D" unique_id=366331094]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2521981)
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head" unique_id=1702458695]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2.5965757, 0.48260677)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2.271988, 0.54480755)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=115076369]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8538201, 0)
+shape = SubResource("CapsuleShape3D_fj7yv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody3D" unique_id=1881810836]
