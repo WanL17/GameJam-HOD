@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Bug Break"
 config/description="A narrative office horror game for the Bug game jam."
-run/main_scene="uid://schveqje4ji1"
+run/main_scene="uid://dnb67b0pof5mt"
 config/features=PackedStringArray("4.6")
 
 [autoload]
