@@ -56,8 +56,3 @@ shape = SubResource("CapsuleShape3D_1hxcq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
 use_collision = true
 size = Vector3(10, 0.2, 10)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=621864826]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-light_energy = 17.28
-shadow_enabled = true
