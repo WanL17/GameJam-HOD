@@ -1,6 +1,10 @@
-[gd_scene format=3 uid="uid://dnb67b0pof5mt"]
+[gd_scene format=3 uid="uid://bdyexgoenu7b0"]
 
-[ext_resource type="Script" uid="uid://b340b34ys4c75" path="res://scripts/main_menu.gd" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://ej1i5t805o75" path="res://scripts/main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://btlisy8mer5no" path="res://assets/UI/Window_Base.png" id="2_ekxnf"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fu7sn"]
+load_path = "res://.godot/imported/Windows_Progress_Fill.png-267da6fba5c07408d4b26799bb2451c1.ctex"
 
 [node name="MainMenu" type="Node" unique_id=1318484792]
 script = ExtResource("1_06t4h")
@@ -10,7 +14,6 @@ offset_left = 539.0
 offset_top = 170.0
 offset_right = 579.0
 offset_bottom = 210.0
-mouse_filter = 2
 
 [node name="CoffeeSprite" type="TextureRect" parent="." unique_id=1173425236]
 offset_left = 539.0
@@ -24,17 +27,58 @@ offset_top = 181.0
 offset_right = 579.0
 offset_bottom = 204.0
 
-[node name="StartButton" type="Button" parent="." unique_id=987563625]
-offset_left = 123.0
-offset_top = 350.0
-offset_right = 695.0
-offset_bottom = 419.0
-text = "go for a coffee break"
+[node name="button_base" type="TextureButton" parent="." unique_id=1485297020]
+texture_filter = 1
+offset_left = 273.0
+offset_top = 314.00003
+offset_right = 288.0
+offset_bottom = 329.00003
+scale = Vector2(20, 5)
+texture_normal = ExtResource("2_ekxnf")
 
-[node name="QuitButton" type="Button" parent="." unique_id=2081361305]
-offset_left = 79.0
-offset_top = 471.0
-offset_right = 537.0
-offset_bottom = 538.0
-text = "get back to working
+[node name="button_base2" type="TextureButton" parent="." unique_id=2077933238]
+texture_filter = 1
+offset_left = 297.0
+offset_top = 321.00003
+offset_right = 313.0
+offset_bottom = 337.00003
+scale = Vector2(14.5, 3.5)
+texture_normal = SubResource("CompressedTexture2D_fu7sn")
+
+[node name="StartButton" type="Button" parent="." unique_id=987563625]
+offset_left = 273.0
+offset_top = 314.0
+offset_right = 647.99994
+offset_bottom = 407.75
+scale = Vector2(0.8, 0.8)
+text = "go for a coffee break"
+flat = true
+
+[node name="button_base3" type="TextureButton" parent="." unique_id=1978424067]
+texture_filter = 1
+offset_left = 206.0
+offset_top = 446.0
+offset_right = 221.0
+offset_bottom = 461.0
+scale = Vector2(20, 5)
+texture_normal = ExtResource("2_ekxnf")
+
+[node name="button_base4" type="TextureButton" parent="." unique_id=1849799419]
+texture_filter = 1
+offset_left = 229.99997
+offset_top = 453.0
+offset_right = 245.99997
+offset_bottom = 469.0
+scale = Vector2(14.5, 3.5)
+texture_normal = SubResource("CompressedTexture2D_fu7sn")
+
+[node name="QuitButton" type="Button" parent="." unique_id=1217044607]
+offset_left = 206.0
+offset_top = 446.0
+offset_right = 580.99994
+offset_bottom = 539.75
+scale = Vector2(0.8, 0.8)
+text = "get back to work
+
 (exit)"
+flat = true
