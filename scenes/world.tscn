@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://schveqje4ji1"]
 
-[ext_resource type="Script" uid="uid://dnxhl51egqv1v" path="res://character_body_3d.gd" id="1_f3sb7"]
-[ext_resource type="PackedScene" uid="uid://da3nemwqq51rx" path="res://assets/office_worker.glb" id="2_fj7yv"]
+[ext_resource type="Script" uid="uid://dnxhl51egqv1v" path="res://scripts/character_body_3d.gd" id="1_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://b4ahwnyhijtoq" path="res://assets/office_worker.glb" id="2_4wyf3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f3sb7"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -35,9 +35,9 @@ environment = SubResource("Environment_tlwt5")
 
 [node name="Player" type="CharacterBody3D" parent="." unique_id=2053822691]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28908622, 0.83865714, 0.0005773902)
-script = ExtResource("1_f3sb7")
+script = ExtResource("1_rwgxs")
 
-[node name="PlayerMesh" parent="Player" unique_id=1909163651 instance=ExtResource("2_fj7yv")]
+[node name="PlayerMesh" parent="Player" unique_id=1909163651 instance=ExtResource("2_4wyf3")]
 transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, -0.7929709, 0)
 
 [node name="Head" type="Node3D" parent="Player" unique_id=366331094]

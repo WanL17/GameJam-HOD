@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://dcbbgiwtl533a"]
 
-[ext_resource type="PackedScene" uid="uid://bdbx4cvc48n1j" path="res://scenes/player.tscn" id="1_qb7o7"]
+[ext_resource type="Script" uid="uid://dnxhl51egqv1v" path="res://scripts/character_body_3d.gd" id="1_j64lg"]
+[ext_resource type="PackedScene" uid="uid://b4ahwnyhijtoq" path="res://assets/office_worker.glb" id="2_pc2gr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1hxcq"]
+radius = 1.2890625
+height = 3.4265137
 
 [node name="Room00" type="Node3D" unique_id=608669161]
 
@@ -23,13 +28,30 @@ size = Vector3(0.2, 3, 10)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.5, 0)
 size = Vector3(0.2, 3, 10)
 
-[node name="Player_tcsn" parent="." unique_id=421240090 instance=ExtResource("1_qb7o7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+[node name="Player_tcsn" type="CharacterBody3D" parent="." unique_id=404739443]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28908622, 1.034015, 0.0005773902)
+script = ExtResource("1_j64lg")
+
+[node name="PlayerMesh" parent="Player_tcsn" unique_id=870406756 instance=ExtResource("2_pc2gr")]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, -0.7929709, 0)
+
+[node name="Head" type="Node3D" parent="Player_tcsn" unique_id=2124618724]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2521981)
+
+[node name="Camera3D" type="Camera3D" parent="Player_tcsn/Head" unique_id=1365871001]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2.271988, 0.54480755)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player_tcsn" unique_id=513557889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8538201, 0)
+shape = SubResource("CapsuleShape3D_1hxcq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player_tcsn" unique_id=970927299]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=652868375]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 2.7631094, 0)
 shadow_enabled = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1672354281]
+[node name="Roof" type="CSGBox3D" parent="." unique_id=1672354281]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+visible = false
 size = Vector3(10, 0.2, 10)
