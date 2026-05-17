@@ -7,6 +7,7 @@ var can_hide: bool = false
 var is_hidden: bool = false
 
 func _ready():
+	print("Player spawned at: ", global_position)
 	if GameManager.next_spawn != Vector3.ZERO:
 		global_position = GameManager.next_spawn
 		GameManager.next_spawn = Vector3.ZERO

@@ -1,20 +1,19 @@
-# SwappableAsset — an office prop that may secretly be a bug
-# Set is_bugged = true in the editor for the ones the player must find.
-extends Sprite2D
+# SwappableAsset — a 3D office prop that is secretly a bug
+# Attach to a MeshInstance3D node. Add an Area3D + CollisionShape3D as children.
+extends MeshInstance3D
 
-@export var normal_texture: Texture2D
-@export var bug_texture: Texture2D
+@export var normal_mesh: Mesh
+@export var bug_mesh: Mesh
 @export var is_bugged: bool = false
-@export var interact_radius: float = 40.0
 
 var found: bool = false
 var player_nearby: bool = false
 
 func _ready():
-	if is_bugged:
-		texture = bug_texture
-	else:
-		texture = normal_texture
+	mesh = bug_mesh if is_bugged else normal_mesh
+	# Connect the Area3D child signals
+	$Area3D.body_entered.connect(_on_body_entered)
+	$Area3D.body_exited.connect(_on_body_exited)
 
 func _unhandled_input(event):
 	if event.is_action_pressed("interact") and player_nearby and is_bugged and not found:
@@ -22,17 +21,17 @@ func _unhandled_input(event):
 
 func _on_found():
 	found = true
-	# Glitch flash effect
 	var tween = create_tween()
-	tween.tween_property(self, "modulate", Color(1, 0.2, 0.2), 0.1)
-	tween.tween_property(self, "modulate", Color(1, 1, 1), 0.1)
-	tween.tween_property(self, "modulate", Color(1, 0.2, 0.2), 0.1)
-	tween.tween_property(self, "modulate", Color(1, 1, 1), 0.15)
+	tween.tween_property(self, "material_override:albedo_color", Color(1, 0.2, 0.2), 0.1)
+	tween.tween_property(self, "material_override:albedo_color", Color(1, 1, 1), 0.1)
+	tween.tween_property(self, "material_override:albedo_color", Color(1, 0.2, 0.2), 0.1)
+	tween.tween_property(self, "material_override:albedo_color", Color(1, 1, 1), 0.15)
 	RoomManager.register_found()
 
-# Call these from an Area2D overlap signal on the asset node
-func on_player_entered():
-	player_nearby = true
+func _on_body_entered(body):
+	if body is CharacterBody3D:
+		player_nearby = true
 
-func on_player_exited():
-	player_nearby = false
+func _on_body_exited(body):
+	if body is CharacterBody3D:
+		player_nearby = false

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dxal8nc3gf1a3"]
 
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://bn0xpqiw1eefw" path="res://assets/textures/backrooms_carpet_dark.svg" id="1_yo7nx"]
 [ext_resource type="Texture2D" uid="uid://dosuwhfjju0pj" path="res://assets/textures/1ky60nq9nh093.png" id="2_jg3vn"]
 [ext_resource type="Texture2D" uid="uid://dt60m8ii48tmo" path="res://assets/textures/1ky60nq9nh092.png" id="3_havci"]
@@ -260,8 +261,12 @@ points = PackedVector3Array(0.59616375, 3.9499025, 0.8652245, 0.48726678, 3.4061
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vual2"]
 points = PackedVector3Array(-0.98948723, 1.745492, -0.3280172, -0.9893444, 1.7454463, 1.0170931, 1, 3.989968, -0.3360181, 0.8179497, -1.3270664, -0.21866548, 0.97788805, 3.9333615, 1.0884314, -0.6461314, -1.3270664, 1.0731658, -0.97848815, 3.9333615, 1.0884314, -0.560133, 4.0991306, -0.47716665, -0.8922053, -0.74231863, -0.31386927, 0.9039481, -0.7237959, 1.1593328, 0.8916052, -0.74231863, -0.31386927, -1, 3.9884317, -0.33558604, 0.5595329, 4.0991306, -0.47716665, -0.7747898, -1.1796613, -0.18642603, -0.88951844, -0.7357771, 1.0027401, 0.9100301, -1.1040866, 0.77999264, 0.9893435, 1.7456379, 1.0174764, 0.98949003, 1.7456847, -0.32845125, 0.47332364, -0.81013155, 1.1593328, 0.5595329, 3.8406632, -0.47716665, 0.91427684, -1.1159046, -0.01350598, 0.8377175, -1.1251868, 0.8629891, -0.560133, 3.8406632, -0.47716665, -0.560133, -1.3270664, 1.0731658, -0.76747966, -1.1550372, 0.8685846, 0.8179497, -0.81013155, 1.1593328, -0.32909265, 0.6255007, 1.1151667)
+=======
+[ext_resource type="Script" uid="uid://2mvjyoqvh5o7" path="res://scenes/rooms/room_01.gd" id="1_1ydvn"]
+>>>>>>> 7b19c5681c5ead4c1bdc7ec98cc5b6fd5ed119be
 
 [node name="room_01" type="Node3D" unique_id=867187246]
+script = ExtResource("1_1ydvn")
 
 [node name="Roof" type="CSGBox3D" parent="." unique_id=1731718914]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 7.1525574e-07, 6, 0.046785355)
@@ -399,6 +404,7 @@ material_override = SubResource("StandardMaterial3D_jgds7")
 size = Vector3(2.5, 4, 0.1)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=419885257]
+<<<<<<< HEAD
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 omni_range = 24.243
 
@@ -768,3 +774,11 @@ shape = SubResource("ConvexPolygonShape3D_vual2")
 [editable path="chair"]
 [editable path="plant"]
 [editable path="disk_reader"]
+=======
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3822947, 0)
+light_energy = 6.13
+omni_range = 4096.0
+
+[node name="spawnnode" type="Node3D" parent="." unique_id=776914794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -15)
+>>>>>>> 7b19c5681c5ead4c1bdc7ec98cc5b6fd5ed119be
