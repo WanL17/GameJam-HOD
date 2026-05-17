@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dcbbgiwtl533a"]
 
-<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://bn0xpqiw1eefw" path="res://assets/textures/backrooms_carpet_dark.svg" id="1_68kjn"]
 [ext_resource type="Texture2D" uid="uid://dt60m8ii48tmo" path="res://assets/textures/1ky60nq9nh092.png" id="1_ksdce"]
 [ext_resource type="Texture2D" uid="uid://b50nlkhw2jpsl" path="res://assets/textures/1ky60nq9nh091.png" id="1_o3mkw"]
@@ -15,14 +14,6 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_in33d"]
 albedo_texture = ExtResource("1_68kjn")
-=======
-[ext_resource type="Texture2D" uid="uid://vr3grwofdfsd" path="res://assets/1ky60nq9nh092.png" id="1_ksdce"]
-[ext_resource type="Texture2D" uid="uid://d3qrm2xrxmdd8" path="res://assets/1ky60nq9nh091.png" id="1_o3mkw"]
-[ext_resource type="Script" uid="uid://dnxhl51egqv1v" path="res://scripts/character_body_3d.gd" id="1_y4dyo"]
-[ext_resource type="Texture2D" uid="uid://dosuwhfjju0pj" path="res://assets/1ky60nq9nh093.png" id="2_68kjn"]
-[ext_resource type="PackedScene" uid="uid://0038fq88hbv1" path="res://assets/Characters/office_worker.glb" id="2_y4dyo"]
-[ext_resource type="Script" uid="uid://cdp473qeif5ib" path="res://scripts/scene_transition.gd" id="3_gnhpg"]
->>>>>>> 7b19c5681c5ead4c1bdc7ec98cc5b6fd5ed119be
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cxpd0"]
 albedo_texture = ExtResource("1_ksdce")
@@ -128,59 +119,55 @@ script = ExtResource("1_y4dyo")
 [node name="PlayerMesh" parent="Player_tcsn" unique_id=2103908971 instance=ExtResource("2_y4dyo")]
 transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0.28908622, -1.034015, -0.0005773902)
 
-[node name="Object_89" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(2103908971, 965745573) index="0" unique_id=190873954]
+[node name="Object_89" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(2103908971, 535150088) index="0" unique_id=1230207054]
 visible = false
 
-[node name="Object_91" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(2103908971, 965745573) index="1" unique_id=96466011]
+[node name="Object_91" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(2103908971, 535150088) index="1" unique_id=355093650]
 visible = false
 
-[node name="Object_93" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(2103908971, 965745573) index="2" unique_id=2046130186]
+[node name="Object_93" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(2103908971, 535150088) index="2" unique_id=94851225]
 visible = false
 
-[node name="Object_95" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(2103908971, 965745573) index="3" unique_id=1705722983]
+[node name="Object_95" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(2103908971, 535150088) index="3" unique_id=505017760]
 visible = false
 
-[node name="Object_97" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(2103908971, 965745573) index="4" unique_id=1883619803]
+[node name="Object_97" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(2103908971, 535150088) index="4" unique_id=686041156]
 visible = false
 
-[node name="Object_99" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(2103908971, 965745573) index="5" unique_id=1835872340]
+[node name="Object_99" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(2103908971, 535150088) index="5" unique_id=189773244]
 visible = false
 
-<<<<<<< HEAD
 [node name="Object_107" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(2103908971, 535150088) index="9" unique_id=1103482475]
 material_override = SubResource("StandardMaterial3D_gu5ko")
 
 [node name="Object_88" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4" parent_id_path=PackedInt32Array(2103908971, 19861563) index="1" unique_id=841814657]
-=======
-[node name="Object_88" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4" parent_id_path=PackedInt32Array(2103908971, 508023082) index="1" unique_id=1394246843]
->>>>>>> 7b19c5681c5ead4c1bdc7ec98cc5b6fd5ed119be
 transform = Transform3D(100.000015, 2.7811853e-10, 1.6884271e-13, -1.6884158e-13, -4.076337e-07, 100.00001, 2.7811856e-10, -100.00001, -4.076337e-07, 6.9284266e-12, 5.4913453e-06, 0.26610813)
 
-[node name="Object_90" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4" parent_id_path=PackedInt32Array(2103908971, 508023082) index="2" unique_id=1134263635]
+[node name="Object_90" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4" parent_id_path=PackedInt32Array(2103908971, 19861563) index="2" unique_id=792131491]
 transform = Transform3D(100.00001, 2.7811853e-10, 1.6884271e-13, -1.6884158e-13, -4.0763553e-07, 100, 2.7811856e-10, -100, -4.0763553e-07, 6.9284266e-12, 5.489926e-06, 0.27481806)
 
-[node name="Object_92" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4" parent_id_path=PackedInt32Array(2103908971, 508023082) index="3" unique_id=1314045093]
+[node name="Object_92" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4" parent_id_path=PackedInt32Array(2103908971, 19861563) index="3" unique_id=935726327]
 transform = Transform3D(100.00001, 2.7811853e-10, 1.6884271e-13, -1.6884158e-13, -4.0763553e-07, 100, 2.7811856e-10, -100, -4.0763553e-07, 6.9284266e-12, 5.486581e-06, 0.29535085)
 
-[node name="Object_94" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4" parent_id_path=PackedInt32Array(2103908971, 508023082) index="4" unique_id=1601101741]
+[node name="Object_94" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4" parent_id_path=PackedInt32Array(2103908971, 19861563) index="4" unique_id=1610391704]
 transform = Transform3D(100.000015, 2.7811853e-10, 1.6884271e-13, -1.6884158e-13, -4.076337e-07, 100.00001, 2.7811856e-10, -100.00001, -4.076337e-07, 6.9284266e-12, 5.4906827e-06, 0.27017388)
 
-[node name="Object_96" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4" parent_id_path=PackedInt32Array(2103908971, 508023082) index="5" unique_id=89210438]
+[node name="Object_96" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4" parent_id_path=PackedInt32Array(2103908971, 19861563) index="5" unique_id=1617710218]
 transform = Transform3D(100.00001, 2.7811853e-10, 1.6884271e-13, -1.6884158e-13, -4.0763553e-07, 100, 2.7811856e-10, -100, -4.0763553e-07, 6.9284266e-12, 5.4898164e-06, 0.27549025)
 
-[node name="Object_98" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4" parent_id_path=PackedInt32Array(2103908971, 508023082) index="6" unique_id=1655746206]
+[node name="Object_98" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4" parent_id_path=PackedInt32Array(2103908971, 19861563) index="6" unique_id=1841200493]
 transform = Transform3D(100.000015, 2.7811853e-10, 1.6884271e-13, -1.6884158e-13, -4.076337e-07, 100.00001, 2.7811856e-10, -100.00001, -4.076337e-07, 6.9284266e-12, 5.487722e-06, 0.28834665)
 
-[node name="Object_100" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4" parent_id_path=PackedInt32Array(2103908971, 508023082) index="7" unique_id=1753273954]
+[node name="Object_100" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4" parent_id_path=PackedInt32Array(2103908971, 19861563) index="7" unique_id=669738665]
 transform = Transform3D(100.00001, 2.7811853e-10, 1.6884271e-13, -1.6884158e-13, -4.0763553e-07, 100, 2.7811856e-10, -100, -4.0763553e-07, 6.9284266e-12, 5.4832008e-06, 0.316097)
 
-[node name="Object_102" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4" parent_id_path=PackedInt32Array(2103908971, 508023082) index="8" unique_id=940334866]
+[node name="Object_102" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4" parent_id_path=PackedInt32Array(2103908971, 19861563) index="8" unique_id=1059112883]
 transform = Transform3D(100.00001, 2.7811853e-10, 1.6884271e-13, -1.6884158e-13, -4.0763553e-07, 100, 2.7811856e-10, -100, -4.0763553e-07, 6.9284266e-12, 5.4877846e-06, 0.28796062)
 
-[node name="Object_104" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4" parent_id_path=PackedInt32Array(2103908971, 508023082) index="9" unique_id=2100629775]
+[node name="Object_104" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4" parent_id_path=PackedInt32Array(2103908971, 19861563) index="9" unique_id=1810017103]
 transform = Transform3D(100.00001, 2.7811853e-10, 1.6884271e-13, -1.6884158e-13, -4.0763553e-07, 100, 2.7811856e-10, -100, -4.0763553e-07, 6.9284266e-12, 5.489681e-06, 0.27632287)
 
-[node name="Object_106" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4" parent_id_path=PackedInt32Array(2103908971, 508023082) index="10" unique_id=1280821663]
+[node name="Object_106" parent="Player_tcsn/PlayerMesh/Sketchfab_model/untitled3_fbx/RootNode/Armature/Object_4" parent_id_path=PackedInt32Array(2103908971, 19861563) index="10" unique_id=646614885]
 transform = Transform3D(100.000015, 2.7811853e-10, 1.6884271e-13, -1.6884158e-13, -4.076337e-07, 100.00001, 2.7811856e-10, -100.00001, -4.076337e-07, 6.9284266e-12, 5.488268e-06, 0.28499424)
 
 [node name="Head" type="Node3D" parent="Player_tcsn" unique_id=2124618724]
