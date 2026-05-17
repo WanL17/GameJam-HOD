@@ -806,10 +806,18 @@ shape = SubResource("ConvexPolygonShape3D_vual2")
 
 [node name="SpiderAI" type="Node3D" parent="." unique_id=1838279207]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 13)
+visible = false
 script = ExtResource("16_havci")
+entry_position = Vector3(0, 2, 13)
+room_center = Vector3(0, 2, 1)
+exit_position = Vector3(0, 2, -27)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SpiderAI" unique_id=874207739]
 mesh = SubResource("SphereMesh_havci")
+
+[node name="Label3D" type="Label3D" parent="SpiderAI/MeshInstance3D" unique_id=1903580868]
+visible = false
+text = "!"
 
 [node name="Player_tcsn" type="CharacterBody3D" parent="." unique_id=222431289]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28908622, 1.1458496, -14.999423)

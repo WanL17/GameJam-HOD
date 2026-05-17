@@ -4,7 +4,7 @@ extends Node3D
 
 func _ready():
 	RoomManager.init_room(3)
-	get_tree().create_timer(30.0).timeout.connect(_spider_visit)
+	get_tree().create_timer(10.0).timeout.connect(_spider_visit)
 
 func _spider_visit():
 	if not RoomManager.found_bugs >= RoomManager.total_bugs:

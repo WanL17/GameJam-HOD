@@ -12,22 +12,22 @@ load_path = "res://.godot/imported/Windows_Progress_Fill.png-267da6fba5c07408d4b
 script = ExtResource("1_06t4h")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1952355583]
-offset_left = 41.0
-offset_top = 22.0
-offset_right = 81.0
-offset_bottom = 62.0
+offset_left = 23.0
+offset_top = -52.0
+offset_right = 63.0
+offset_bottom = -12.0
 
 [node name="CoffeeSprite" type="TextureRect" parent="." unique_id=1173425236]
-offset_left = 41.0
-offset_top = 22.0
-offset_right = 81.0
-offset_bottom = 62.0
+offset_left = 23.0
+offset_top = -52.0
+offset_right = 63.0
+offset_bottom = -12.0
 
 [node name="NoCoffeeLabel" type="Label" parent="." unique_id=203319602]
-offset_left = 41.0
-offset_top = 33.0
-offset_right = 81.0
-offset_bottom = 56.0
+offset_left = 23.0
+offset_top = -41.0
+offset_right = 63.0
+offset_bottom = -18.0
 
 [node name="button_base" type="TextureButton" parent="." unique_id=1485297020]
 texture_filter = 1
