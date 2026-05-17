@@ -8,7 +8,8 @@ extends Node3D
 @export var hunt_speed: float = 7.0
 @export var time_limit: float = 300.0  # 5 minutes
 
-@onready var label = $Label3D
+# No @onready — Label3D is optional, looked up safely at runtime
+var label: Label3D = null
 
 var _overlay: Label = null
 var _timer_label: Label = null
@@ -22,19 +23,21 @@ var _timer_active: bool = false
 
 func _ready():
 	visible = false
+	# Grab Label3D only if it actually exists in the scene
+	if has_node("Label3D"):
+		label = $Label3D
 	_overlay = _get_or_create_overlay()
 	_timer_label = _get_or_create_timer_label()
 	if _overlay:
 		_overlay.visible = false
 	_time_left = time_limit
-	_timer_active = true
+	_timer_active = false  # room_01.gd enables this after the swap
 	_player = get_tree().root.find_child("Player", true, false) as Node3D
 
 func _process(delta):
 	if not _timer_active or _done:
 		return
 
-	# Update countdown HUD
 	_time_left -= delta
 	if _timer_label:
 		var mins = int(_time_left) / 60
@@ -43,7 +46,6 @@ func _process(delta):
 		if _time_left <= 60.0:
 			_timer_label.add_theme_color_override("font_color", Color(0.9, 0.1, 0.1))
 
-	# Time ran out — start hunt
 	if _time_left <= 0.0 and not _hunting:
 		_timer_active = false
 		if _timer_label:
@@ -51,7 +53,6 @@ func _process(delta):
 		_start_hunt()
 		return
 
-	# Hunt mode: chase player directly
 	if _hunting and _player:
 		var dir = (_player.global_position - global_position)
 		dir.y = 0
@@ -72,7 +73,6 @@ func trigger():
 	await _reach_target()
 	visible = false
 
-
 func _start_hunt():
 	_hunting = true
 	_moving = false
@@ -81,16 +81,13 @@ func _start_hunt():
 	await get_tree().create_timer(1.5).timeout
 	_hide_overlay_message()
 
-
 func _on_caught_player():
 	_hunting = false
 	_done = true
 	_hide_overlay_message()
 	if _timer_label:
 		_timer_label.visible = false
-	# Go back to main menu
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
-
 
 func _center_sequence():
 	_moving = false
@@ -107,7 +104,6 @@ func _center_sequence():
 	if label:
 		label.visible = false
 
-
 func _physics_process(delta):
 	if not _moving:
 		return
@@ -119,12 +115,10 @@ func _physics_process(delta):
 	global_position += dir.normalized() * move_speed * delta
 	look_at(global_position + dir.normalized(), Vector3.UP)
 
-
 func _reach_target() -> void:
 	_moving = true
 	while _moving:
 		await get_tree().process_frame
-
 
 func _get_or_create_overlay() -> Label:
 	var canvas = get_tree().root.find_child("SpiderOverlay", true, false)
@@ -145,7 +139,6 @@ func _get_or_create_overlay() -> Label:
 	cl.add_child(lbl)
 	return lbl
 
-
 func _get_or_create_timer_label() -> Label:
 	var canvas = get_tree().root.find_child("SpiderTimerCanvas", true, false)
 	if canvas and canvas is CanvasLayer:
@@ -157,7 +150,6 @@ func _get_or_create_timer_label() -> Label:
 	var lbl = Label.new()
 	lbl.name = "TimerLabel"
 	lbl.text = "05:00"
-	# Anchor top-right
 	lbl.set_anchor(SIDE_LEFT, 1.0)
 	lbl.set_anchor(SIDE_TOP, 0.0)
 	lbl.set_anchor(SIDE_RIGHT, 1.0)
@@ -171,12 +163,10 @@ func _get_or_create_timer_label() -> Label:
 	cl.add_child(lbl)
 	return lbl
 
-
 func _show_overlay_message(msg: String):
 	if _overlay:
 		_overlay.text = msg
 		_overlay.visible = true
-
 
 func _hide_overlay_message():
 	if _overlay:
