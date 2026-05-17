@@ -8,15 +8,24 @@ extends MeshInstance3D
 
 var found: bool = false
 var player_nearby: bool = false
+var _activated: bool = false
 
 func _ready():
-	mesh = bug_mesh if is_bugged else normal_mesh
-	# Connect the Area3D child signals
+	# Always start with normal mesh so player can memorise the room
+	mesh = normal_mesh
 	$Area3D.body_entered.connect(_on_body_entered)
 	$Area3D.body_exited.connect(_on_body_exited)
 
+func activate_bug():
+	# Called by room after 30s — only actually swaps if this object is flagged
+	if not is_bugged:
+		return
+	_activated = true
+	# Small tween flash so the player notices something changed
+	mesh = bug_mesh
+
 func _unhandled_input(event):
-	if event.is_action_pressed("interact") and player_nearby and is_bugged and not found:
+	if event.is_action_pressed("interact") and player_nearby and _activated and not found:
 		_on_found()
 
 func _on_found():
