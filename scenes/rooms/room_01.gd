@@ -1,28 +1,21 @@
 extends Node3D
 
 @onready var spider = $SpiderAI
+@onready var exit_door = $ExitDoor  # Must be the door Node3D with inverted_door.gd
 
-# Collect all swappable objects in the room
 var _swappables: Array = []
 
 func _ready():
 	RoomManager.init_room(3)
-	# Disable hunt timer until swap happens
-	spider._timer_active = false
-
-	# Find every SwappableAsset in the room
+	RoomManager.exit_door = exit_door
+	RoomManager.spider = spider
 	_swappables = _find_swappables(get_tree().root)
-
-	# After 30s: swap objects so player has seen the normal state
 	get_tree().create_timer(30.0).timeout.connect(_activate_swaps)
 
 func _activate_swaps():
 	for s in _swappables:
 		s.activate_bug()
-	# Now start the 5-minute hunt countdown
-	spider._time_left = spider.time_limit
-	spider._timer_active = true
-	# Spider visits 30s after swaps appear
+	spider.start_timer()
 	get_tree().create_timer(30.0).timeout.connect(_spider_visit)
 
 func _spider_visit():

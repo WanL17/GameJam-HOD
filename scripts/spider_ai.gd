@@ -8,9 +8,7 @@ extends Node3D
 @export var hunt_speed: float = 7.0
 @export var time_limit: float = 300.0  # 5 minutes
 
-# No @onready — Label3D is optional, looked up safely at runtime
 var label: Label3D = null
-
 var _overlay: Label = null
 var _timer_label: Label = null
 var _target: Vector3
@@ -23,16 +21,32 @@ var _timer_active: bool = false
 
 func _ready():
 	visible = false
-	# Grab Label3D only if it actually exists in the scene
 	if has_node("Label3D"):
 		label = $Label3D
 	_overlay = _get_or_create_overlay()
 	_timer_label = _get_or_create_timer_label()
 	if _overlay:
 		_overlay.visible = false
-	_time_left = time_limit
-	_timer_active = false  # room_01.gd enables this after the swap
+	# Add player to group for reliable lookup
+	_find_player()
+
+func _find_player():
+	var players = get_tree().get_nodes_in_group("player")
+	if players.size() > 0:
+		_player = players[0]
+		return
+	# Fallback: name search
 	_player = get_tree().root.find_child("Player", true, false) as Node3D
+
+func start_timer():
+	# Called by room_01.gd after swaps activate
+	_time_left = time_limit
+	_timer_active = true
+	# Show spider lurking at entry as a visual warning
+	global_position = entry_position
+	visible = true
+	await get_tree().create_timer(3.0).timeout
+	visible = false
 
 func _process(delta):
 	if not _timer_active or _done:
@@ -40,8 +54,8 @@ func _process(delta):
 
 	_time_left -= delta
 	if _timer_label:
-		var mins = int(_time_left) / 60
-		var secs = int(_time_left) % 60
+		var mins = int(max(_time_left, 0)) / 60
+		var secs = int(max(_time_left, 0)) % 60
 		_timer_label.text = "%02d:%02d" % [mins, secs]
 		if _time_left <= 60.0:
 			_timer_label.add_theme_color_override("font_color", Color(0.9, 0.1, 0.1))
@@ -53,14 +67,17 @@ func _process(delta):
 		_start_hunt()
 		return
 
-	if _hunting and _player:
-		var dir = (_player.global_position - global_position)
-		dir.y = 0
-		if dir.length() < 1.0:
-			_on_caught_player()
-			return
-		global_position += dir.normalized() * hunt_speed * delta
-		look_at(global_position + dir.normalized(), Vector3.UP)
+	if _hunting:
+		_find_player()
+		if _player:
+			var dir = (_player.global_position - global_position)
+			dir.y = 0
+			if dir.length() < 1.2:
+				_on_caught_player()
+				return
+			global_position += dir.normalized() * hunt_speed * delta
+			if dir.length() > 0.01:
+				look_at(global_position + dir.normalized(), Vector3.UP)
 
 func trigger():
 	visible = true
@@ -73,9 +90,18 @@ func trigger():
 	await _reach_target()
 	visible = false
 
+func stop_timer():
+	# Called when player finds all bugs
+	_timer_active = false
+	_hunting = false
+	visible = false
+	if _timer_label:
+		_timer_label.visible = false
+
 func _start_hunt():
 	_hunting = true
 	_moving = false
+	global_position = entry_position
 	visible = true
 	_show_overlay_message("time's up.")
 	await get_tree().create_timer(1.5).timeout
@@ -113,7 +139,8 @@ func _physics_process(delta):
 		_moving = false
 		return
 	global_position += dir.normalized() * move_speed * delta
-	look_at(global_position + dir.normalized(), Vector3.UP)
+	if dir.length() > 0.01:
+		look_at(global_position + dir.normalized(), Vector3.UP)
 
 func _reach_target() -> void:
 	_moving = true
