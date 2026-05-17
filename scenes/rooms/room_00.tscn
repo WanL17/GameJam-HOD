@@ -192,4 +192,9 @@ script = ExtResource("3_gnhpg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.036169052, -0.5090332, 0)
 shape = SubResource("BoxShape3D_y4dyo")
 
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=86931280]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, -9)
+light_energy = 5.0
+omni_range = 10.0
+
 [editable path="Player_tcsn/PlayerMesh"]
