@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ej1i5t805o75" path="res://scripts/main_menu.gd" id="1_06t4h"]
 [ext_resource type="Texture2D" uid="uid://btlisy8mer5no" path="res://assets/UI/Window_Base.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://bspr100xxjpoi" path="res://assets/UI/title.png" id="3_bqqt6"]
+[ext_resource type="FontFile" uid="uid://sq2mx25hr4be" path="res://assets/UI/pokemon_pixel_font.ttf" id="3_wu84c"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fu7sn"]
 load_path = "res://.godot/imported/Windows_Progress_Fill.png-267da6fba5c07408d4b26799bb2451c1.ctex"
@@ -10,74 +12,86 @@ load_path = "res://.godot/imported/Windows_Progress_Fill.png-267da6fba5c07408d4b
 script = ExtResource("1_06t4h")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1952355583]
-offset_left = 539.0
-offset_top = 170.0
-offset_right = 579.0
-offset_bottom = 210.0
+offset_left = 41.0
+offset_top = 22.0
+offset_right = 81.0
+offset_bottom = 62.0
 
 [node name="CoffeeSprite" type="TextureRect" parent="." unique_id=1173425236]
-offset_left = 539.0
-offset_top = 170.0
-offset_right = 579.0
-offset_bottom = 210.0
+offset_left = 41.0
+offset_top = 22.0
+offset_right = 81.0
+offset_bottom = 62.0
 
 [node name="NoCoffeeLabel" type="Label" parent="." unique_id=203319602]
-offset_left = 539.0
-offset_top = 181.0
-offset_right = 579.0
-offset_bottom = 204.0
+offset_left = 41.0
+offset_top = 33.0
+offset_right = 81.0
+offset_bottom = 56.0
 
 [node name="button_base" type="TextureButton" parent="." unique_id=1485297020]
 texture_filter = 1
-offset_left = 273.0
-offset_top = 314.00003
-offset_right = 288.0
-offset_bottom = 329.00003
+offset_left = 439.0
+offset_top = 325.00003
+offset_right = 454.0
+offset_bottom = 340.00003
 scale = Vector2(20, 5)
 texture_normal = ExtResource("2_ekxnf")
 
 [node name="button_base2" type="TextureButton" parent="." unique_id=2077933238]
 texture_filter = 1
-offset_left = 297.0
-offset_top = 321.00003
-offset_right = 313.0
-offset_bottom = 337.00003
+offset_left = 463.0
+offset_top = 332.00003
+offset_right = 479.0
+offset_bottom = 348.00003
 scale = Vector2(14.5, 3.5)
 texture_normal = SubResource("CompressedTexture2D_fu7sn")
 
 [node name="StartButton" type="Button" parent="." unique_id=987563625]
-offset_left = 273.0
-offset_top = 314.0
-offset_right = 647.99994
-offset_bottom = 407.75
+offset_left = 439.0
+offset_top = 325.0
+offset_right = 813.99994
+offset_bottom = 418.75
 scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 30
 text = "go for a coffee break"
 flat = true
 
 [node name="button_base3" type="TextureButton" parent="." unique_id=1978424067]
 texture_filter = 1
-offset_left = 206.0
-offset_top = 446.0
-offset_right = 221.0
-offset_bottom = 461.0
+offset_left = 372.0
+offset_top = 457.0
+offset_right = 387.0
+offset_bottom = 472.0
 scale = Vector2(20, 5)
 texture_normal = ExtResource("2_ekxnf")
 
 [node name="button_base4" type="TextureButton" parent="." unique_id=1849799419]
 texture_filter = 1
-offset_left = 229.99997
-offset_top = 453.0
-offset_right = 245.99997
-offset_bottom = 469.0
+offset_left = 395.99997
+offset_top = 464.0
+offset_right = 411.99997
+offset_bottom = 480.0
 scale = Vector2(14.5, 3.5)
 texture_normal = SubResource("CompressedTexture2D_fu7sn")
 
+[node name="button_base5" type="TextureButton" parent="." unique_id=1973621837]
+texture_filter = 1
+offset_left = 301.0
+offset_top = 118.0
+offset_right = 901.0
+offset_bottom = 248.0
+texture_normal = ExtResource("3_bqqt6")
+
 [node name="QuitButton" type="Button" parent="." unique_id=1217044607]
-offset_left = 206.0
-offset_top = 446.0
-offset_right = 580.99994
-offset_bottom = 539.75
+offset_left = 372.0
+offset_top = 457.0
+offset_right = 746.99994
+offset_bottom = 550.75
 scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 30
 text = "get back to work
 
 (exit)"
